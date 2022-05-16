@@ -1,3 +1,31 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito&family=Open+Sans&family=Poppins&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* html, body and base html tags */
+@layer base {
+  body {
+    @apply min-h-screen w-full bg-dgbg font-open text-white scrollbar-thin scrollbar-track-tlg scrollbar-thumb-trs;
+  }
+  header {
+    @apply transit fixed top-0 z-10 flex w-full items-center justify-between p-4 lg:px-10 lg:py-6;
+  }
+}
+
+/* custom class names */
+@layer components {
+  .transit {
+    @apply transition-all duration-300 ease-in-out;
+  }
+  .headerLink {
+    @apply transit cursor-pointer font-nuno text-sm text-cgw hover:text-cdgw;
+  }
+  .buttonBanner {
+    @apply transit flex items-center gap-x-2 rounded-lg px-5 py-1.5 font-nuno text-sm font-semibold hover:opacity-75 md:py-2 md:px-7 md:text-lg lg:py-2.5 lg:px-8 lg:text-xl;
+  }
+  .rowChevs {
+    @apply transit absolute top-0 bottom-0 z-20 m-auto h-8 w-8 cursor-pointer opacity-0 hover:scale-125 hover:opacity-75 group-hover:opacity-75;
+  }
+}
